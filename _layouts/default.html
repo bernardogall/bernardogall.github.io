@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html class="no-js" lang="en">
-
-<head>
+  <html class="no-js" lang="{{ page.lang | default: site.lang | default: "en" }}">
+  
+  <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -15,11 +15,23 @@
     <title>Bernardo Gall</title>
     <meta name="subject" content="Personal website of Bernardo Gall">
     <meta name="description" content="DESCRIPTION">
-</head>
+  </head>
+{%- include head.html -%}
+  <body>
 
-<body>
 
-    <section id="header" class="main">
+
+
+
+
+
+
+
+
+
+
+
+    <section id="header" class="main page-content" aria-label="Content">
         <header class="noselect bubble">
             <div data-text="BER">
                 <p class="ber omg">Ber</p>
@@ -65,6 +77,13 @@
 
             <div class="content noselect">
                <p>In the meantime, you can follow me on <a class="link linkedin" href="http://br.linkedin.com/in/bernardogall/" target="_blank" rel="noopener"> linkedin</a>.</p>
+
+    <main class="" >
+      <div class="wrapper">
+        
+        {{ content }}
+      </div>
+    </main>
             </div>
         </div>
     </section>
