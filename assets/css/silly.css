@@ -1,0 +1,487 @@
+/*
+
+ ▄▄▄▄     ▄████  ▄▄▄       ██▓     ██▓          ▄████▄   ▒█████
+▓█████▄  ██▒ ▀█▒▒████▄    ▓██▒    ▓██▒         ▒██▀ ▀█  ▒██▒  ██▒
+▒██▒ ▄██▒██░▄▄▄░▒██  ▀█▄  ▒██░    ▒██░         ▒▓█    ▄ ▒██░  ██▒
+▒██░█▀  ░▓█  ██▓░██▄▄▄▄██ ▒██░    ▒██░         ▒▓▓▄ ▄██▒▒██   ██░
+░▓█  ▀█▓░▒▓███▀▒ ▓█   ▓██▒░██████▒░██████▒ ██▓ ▒ ▓███▀ ░░ ████▓▒░
+░▒▓███▀▒ ░▒   ▒  ▒▒   ▓▒█░░ ▒░▓  ░░ ▒░▓  ░ ▒▓▒ ░ ░▒ ▒  ░░ ▒░▒░▒░
+▒░▒   ░   ░   ░   ▒   ▒▒ ░░ ░ ▒  ░░ ░ ▒  ░ ░▒    ░  ▒     ░ ▒ ▒░
+ ░    ░ ░ ░   ░   ░   ▒     ░ ░     ░ ░    ░   ░        ░ ░ ░ ▒
+ ░            ░       ░  ░    ░  ░    ░  ░  ░  ░ ░          ░ ░
+      ░                                     ░  ░
+================================================================================================ mouse/scroll animation */
+.arrow {
+    width: 0;
+    height: 0;
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    opacity: .3;
+    border-top: 10px solid #039EA3;
+    bottom: 0 !important;
+    right: 0;
+    z-index: 1;
+    position: fixed;
+    animation: mouse 4.20s ease-out infinite;
+}
+@keyframes mouse {
+    50% {opacity: 0;}
+    70% {
+        transform: translate(0, -42px);
+        opacity: 0;
+    }
+}
+/*================================================================================================ glitch */
+.glitch {
+    position: relative;
+}
+.glitch:hover {
+    animation: glitch-animation 2s infinite linear alternate-reverse;
+    background: rgba(0, 0, 0, 0);
+    clip: rect( 0, 900px, 0, 0);
+    color: #e74c3c;
+    content: attr( data-text);
+    left: 2px;
+    overflow: hidden;
+    position: absolute;
+    text-shadow: -1px 0 red;
+    top: 0;
+}
+.glitch::after{
+    animation: glitch-animation-2 3s infinite linear alternate-reverse;
+    background: rgba(0, 0, 0, 0);
+    clip: rect( 0, 900px, 0, 0);
+    color: #e74c3c;
+    content: attr( data-text);
+    left: -2px;
+    overflow: hidden;
+    position: absolute;
+    text-shadow: 1px 0 blue;
+    top: 0;
+}
+@keyframes glitch-animation {
+    0% {
+        clip: rect(42px, 9999px, 44px, 0);
+    }
+    5% {
+        clip: rect(12px, 9999px, 59px, 0);
+    }
+    10% {
+        clip: rect(48px, 9999px, 29px, 0);
+    }
+    15.0% {
+        clip: rect(42px, 9999px, 73px, 0);
+    }
+    20% {
+        clip: rect(63px, 9999px, 27px, 0);
+    }
+    25% {
+        clip: rect(34px, 9999px, 55px, 0);
+    }
+    30.0% {
+        clip: rect(86px, 9999px, 73px, 0);
+    }
+    35% {
+        clip: rect(20px, 9999px, 20px, 0);
+    }
+    40% {
+        clip: rect(26px, 9999px, 60px, 0);
+    }
+    45% {
+        clip: rect(25px, 9999px, 66px, 0);
+    }
+    50% {
+        clip: rect(57px, 9999px, 98px, 0);
+    }
+    55.0% {
+        clip: rect(5px, 9999px, 46px, 0);
+    }
+    60.0% {
+        clip: rect(82px, 9999px, 31px, 0);
+    }
+    65% {
+        clip: rect(54px, 9999px, 27px, 0);
+    }
+    70% {
+        clip: rect(28px, 9999px, 99px, 0);
+    }
+    75% {
+        clip: rect(45px, 9999px, 69px, 0);
+    }
+    80% {
+        clip: rect(23px, 9999px, 85px, 0);
+    }
+    85.0% {
+        clip: rect(54px, 9999px, 84px, 0);
+    }
+    90% {
+        clip: rect(45px, 9999px, 47px, 0);
+    }
+    95% {
+        clip: rect(37px, 9999px, 20px, 0);
+    }
+    100% {
+        clip: rect(4px, 9999px, 91px, 0);
+    }
+}
+@keyframes glitch-animation-2 {
+    0% {
+        clip: rect(65px, 9999px, 100px, 0);
+    }
+    5% {
+        clip: rect(52px, 9999px, 74px, 0);
+    }
+    10% {
+        clip: rect(79px, 9999px, 85px, 0);
+    }
+    15.0% {
+        clip: rect(75px, 9999px, 5px, 0);
+    }
+    20% {
+        clip: rect(67px, 9999px, 61px, 0);
+    }
+    25% {
+        clip: rect(14px, 9999px, 79px, 0);
+    }
+    30.0% {
+        clip: rect(1px, 9999px, 66px, 0);
+    }
+    35% {
+        clip: rect(86px, 9999px, 30px, 0);
+    }
+    40% {
+        clip: rect(23px, 9999px, 98px, 0);
+    }
+    45% {
+        clip: rect(85px, 9999px, 72px, 0);
+    }
+    50% {
+        clip: rect(71px, 9999px, 75px, 0);
+    }
+    55.0% {
+        clip: rect(2px, 9999px, 48px, 0);
+    }
+    60.0% {
+        clip: rect(30px, 9999px, 16px, 0);
+    }
+    65% {
+        clip: rect(59px, 9999px, 50px, 0);
+    }
+    70% {
+        clip: rect(41px, 9999px, 62px, 0);
+    }
+    75% {
+        clip: rect(2px, 9999px, 82px, 0);
+    }
+    80% {
+        clip: rect(47px, 9999px, 73px, 0);
+    }
+    85.0% {
+        clip: rect(3px, 9999px, 27px, 0);
+    }
+    90% {
+        clip: rect(26px, 9999px, 55px, 0);
+    }
+    95% {
+        clip: rect(42px, 9999px, 97px, 0);
+    }
+    100% {
+        clip: rect(38px, 9999px, 49px, 0);
+    }
+}
+/*================================================================================================ img hover */
+.hover-reveal {
+    color: inherit;
+    cursor: pointer;
+    font: inherit;
+    font-size: inherit;
+    position: relative;
+}
+.hover-reveal-image {
+    -webkit-transform: translate(-50%, 0px);
+    -moz-transform: translate(-50%, 0px);
+    -ms-transform: translate(-50%, 0px);
+    -o-transform: translate(-50%, 0px);
+    transform: translate(-50%, 0px);
+    -webkit-transition: -webkit-transform 0.55s ease-in-out;
+    -moz-transition: -moz-transform 0.55s ease-in-out;
+    transition: transform 0.55s ease-in-out;
+    bottom: 0%;
+    cursor: pointer;
+    height: 0.1rem;
+    left: 50%;
+    opacity: 0;
+    position: absolute;
+}
+.hover {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+}
+.hover-reveal.no-touch:hover .hover-reveal-image,
+.hover-reveal.hover-effect .hover-reveal-image {
+    -webkit-transform: translate(-50%, -30px);
+    -moz-transform: translate(-50%, -30px);
+    -ms-transform: translate(-50%, -30px);
+    -o-transform: translate(-50%, -30px);
+    transform: translate(-50%, -30px);
+    height: auto;
+    left: 50%;
+    opacity: 1;
+}
+.nanana {
+    width: 50%;
+    height: 50%;
+    border: none;
+    border-radius: 40px 10px;
+}
+/*
+.hover-reveal-image.left {
+  -webkit-transform: translate(0%, 0px);
+  -moz-transform: translate(0%, 0px);
+  -ms-transform: translate(0%, 0px);
+  -o-transform: translate(0%, 0px);
+  transform: translate(0%, 0px);
+  left: 0%; }
+.hover-reveal.no-touch.left:hover .hover-reveal-image,
+.hover-reveal.hover-effect.left:hover .hover-reveal-image {
+  -webkit-transform: translate(0%, -30px);
+  -moz-transform: translate(0%, -30px);
+  -ms-transform: translate(0%, -30px);
+  -o-transform: translate(0%, -30px);
+  transform: translate(0%, -30px);
+  height: auto;
+  left: 0%;
+  opacity: 1; }
+*/
+/*================================================================================================ Alternative loader
+<span class="loading" aria-hidden="true"></span>
+.loading {
+display: inline-block;
+overflow: hidden;
+height: 1.3em;
+margin-top: -0.3em;
+line-height: 1.5em;
+vertical-align: text-bottom;
+}
+.loading::after {
+display: inline-table;
+white-space: pre;
+text-align: left;
+content: "⠋\A⠙\A⠹\A⠸\A⠼\A⠴\A⠦\A⠧\A⠇\A⠏";
+animation: spin10 1s steps(10) infinite;
+}
+@keyframes spin10 { to { transform: translateY(-15.0em); } }
+--- */
+/*================================================================================================ CSShake
+
+
+v1.5.0
+CSS classes to move your DOM
+(c) 2015 @elrumordelaluz
+http://elrumordelaluz.github.io/csshake/
+This is my version also licensed under MIT
+\* * * * * * * * * * * * * * * * * * * * */
+.shake {
+    display: inline-block;
+    transform-origin: center center;
+    animation-name: shake;
+    animation-duration: 100ms;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-play-state: running;
+}
+@keyframes shake {
+    2% {
+        transform: translate(0.5px, 0.5px) rotate(-0.5deg); opacity: 0; }
+    4% {
+        transform: translate(0.5px, 2.5px) rotate(1.5deg); opacity: 0; }
+    6% {
+        transform: translate(-0.5px, 1.5px) rotate(0.5deg); opacity: 1; }
+    8% {
+        transform: translate(2.5px, 1.5px) rotate(-0.5deg); opacity: 0; }
+    10% {
+        transform: translate(-1.5px, 0.5px) rotate(1.5deg); opacity: 0; }
+    12% {
+        transform: translate(2.5px, -1.5px) rotate(-0.5deg); opacity: 0; }
+    14% {
+        transform: translate(0.5px, -0.5px) rotate(1.5deg); opacity: 0; }
+    16% {
+        transform: translate(1.5px, 1.5px) rotate(-0.5deg); opacity: 0; }
+    18% {
+        transform: translate(-0.5px, 0.5px) rotate(0.5deg); opacity: 1; }
+    20% {
+        transform: translate(-0.5px, -0.5px) rotate(-0.5deg); opacity: 0; }
+    22% {
+        transform: translate(-1.5px, -1.5px) rotate(-0.5deg); opacity: 0; }
+    24% {
+        transform: translate(1.5px, -0.5px) rotate(1.5deg); opacity: 0; }
+    26% {
+        transform: translate(1.5px, 1.5px) rotate(0.5deg); opacity: 1; }
+    28% {
+        transform: translate(2.5px, 1.5px) rotate(0.5deg); opacity: 1; }
+    30% {
+        transform: translate(2.5px, 0.5px) rotate(1.5deg); opacity: 0; }
+    32% {
+        transform: translate(-0.5px, -0.5px) rotate(0.5deg); opacity: 1; }
+    34% {
+        transform: translate(-1.5px, -0.5px) rotate(-0.5deg); opacity: 0; }
+    36% {
+        transform: translate(-1.5px, 2.5px) rotate(0.5deg); opacity: 1; }
+    38% {
+        transform: translate(2.5px, 2.5px) rotate(0.5deg); opacity: 1; }
+    40% {
+        transform: translate(2.5px, 0.5px) rotate(0.5deg); opacity: 1; }
+    42% {
+        transform: translate(1.5px, 2.5px) rotate(-0.5deg); opacity: 0; }
+    44% {
+        transform: translate(0.5px, -1.5px) rotate(1.5deg); opacity: 0; }
+    46% {
+        transform: translate(2.5px, 0.5px) rotate(1.5deg); opacity: 0; }
+    48% {
+        transform: translate(-0.5px, -0.5px) rotate(1.5deg); opacity: 0; }
+    50% {
+        transform: translate(2.5px, 1.5px) rotate(1.5deg); opacity: 0; }
+    52% {
+        transform: translate(0.5px, 0.5px) rotate(0.5deg); opacity: 1; }
+    54% {
+        transform: translate(-0.5px, -1.5px) rotate(-0.5deg); opacity: 0; }
+    56% {
+        transform: translate(0.5px, 1.5px) rotate(0.5deg); opacity: 1; }
+    58% {
+        transform: translate(2.5px, 0.5px) rotate(0.5deg); opacity: 1; }
+    60% {
+        transform: translate(-1.5px, 0.5px) rotate(0.5deg); opacity: 1; }
+    62% {
+        transform: translate(0.5px, 1.5px) rotate(0.5deg); opacity: 1; }
+    64% {
+        transform: translate(-0.5px, 0.5px) rotate(-0.5deg); opacity: 0; }
+    66% {
+        transform: translate(0.5px, 0.5px) rotate(0.5deg); opacity: 1; }
+    68% {
+        transform: translate(-1.5px, 0.5px) rotate(1.5deg); opacity: 0; }
+    70% {
+        transform: translate(-0.5px, 2.5px) rotate(1.5deg); opacity: 0; }
+    72% {
+        transform: translate(-0.5px, 0.5px) rotate(0.5deg); opacity: 1; }
+    74% {
+        transform: translate(-1.5px, 0.5px) rotate(0.5deg); opacity: 1; }
+    76% {
+        transform: translate(-1.5px, 0.5px) rotate(0.5deg); opacity: 1; }
+    78% {
+        transform: translate(-0.5px, 2.5px) rotate(1.5deg); opacity: 0; }
+    80% {
+        transform: translate(-1.5px, 1.5px) rotate(-0.5deg); opacity: 0; }
+    82% {
+        transform: translate(1.5px, 1.5px) rotate(-0.5deg); opacity: 0; }
+    84% {
+        transform: translate(0.5px, -0.5px) rotate(1.5deg); opacity: 0; }
+    86% {
+        transform: translate(0.5px, -1.5px) rotate(-0.5deg); opacity: 0; }
+    88% {
+        transform: translate(1.5px, 1.5px) rotate(0.5deg); opacity: 1; }
+    90% {
+        transform: translate(2.5px, 0.5px) rotate(-0.5deg); opacity: 0; }
+    92% {
+        transform: translate(2.5px, -0.5px) rotate(-0.5deg); opacity: 0; }
+    94% {
+        transform: translate(-1.5px, 1.5px) rotate(0.5deg); opacity: 1; }
+    96% {
+        transform: translate(-1.5px, 0.5px) rotate(0.5deg); opacity: 1; }
+    98% {
+        transform: translate(-1.5px, 0.5px) rotate(1.5deg); opacity: 0;}
+    0%, 100% {
+        transform: translate(0, 0) rotate(0); }
+
+    13% {
+    transform: translate(2px, 3px) rotate(-9deg);
+    opacity: 1; }
+    23% {
+        transform: translate(3px, 3px) rotate(-7deg);
+        opacity: 0.71; }
+    36% {
+        transform: translate(2px, 18px) rotate(5deg);
+        opacity: 0.83; }
+    42% {
+        transform: translate(7px, 18px) rotate(-7deg);
+        opacity: 0.2; }
+    55% {
+        transform: translate(13px, -14px) rotate(10deg);
+        opacity: 0.71; }
+    66% {
+        transform: translate(-14px, 20px) rotate(3deg);
+        opacity: 0.42; }
+    79% {
+        transform: translate(-15px, 17px) rotate(5deg);
+        opacity: 0.7; }
+    81% {
+        transform: translate(-17px, -1px) rotate(-3deg);
+        opacity: 0.62; }
+    94% {
+        transform: translate(-4px, 2px) rotate(8deg);
+        opacity: 0.15; }
+
+    16.65% {
+        -webkit-transform: translateY(4px);
+        transform: translateY(4px);
+    }
+    33.3% {
+        -webkit-transform: translateY(-6px);
+        transform: translateY(-6px);
+    }
+    49.95% {
+        -webkit-transform: translateY(4px);
+        transform: translateY(4px);
+    }
+    66.6% {
+        -webkit-transform: translateY(-2px);
+        transform: translateY(-2px);
+    }
+    83.25% {
+        -webkit-transform: translateY(1px);
+        transform: translateY(1px);
+    }
+}
+
+
+/*================================================================================================ crt */
+
+
+
+.crt {
+    float:left;
+    position:relative;
+    overflow:hidden;
+}
+@keyframes crt {
+    0% {opacity: 0;}
+    99% {opacity: 0;}
+    100% {opacity: 1;}
+}
+.crt span.screen,
+.crt span.snow {
+    display:block;
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:transparent url(../../images/crt-screen.gif) top left repeat;
+}
+.crt span.snow {
+    background:transparent url(../../images/crt-snow.gif);
+    animation: crt 4.2s infinite linear !important;
+    background-attachment: fixed, fixed;
+    background-position: top left, center center;
+    background-repeat: repeat, none;
+    background-size: auto, cover;
+    height: 100%;
+    left: 0;
+    opacity: 0;
+    top: 0;
+    width: 100%;
+}
+/*
+.crt:hover span.snow {
+    display:none;
+}
+*/
