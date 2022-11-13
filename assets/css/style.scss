@@ -1,7 +1,7 @@
 ---
 ---
 
-@import "{{ site.theme }}";
+
 @import url("loader.css");
 @import url("silly.css");
 @import url("http://fonts.googleapis.com/css?family=Raleway:400,800");
@@ -424,7 +424,7 @@ html.is-touch #wrapper {
 
 .bubble {
     text-transform: uppercase;
-    background-image: url("../../img/bgs.gif");
+    background-image: url("../img/bgs.gif");
     font-weight: 800;
     font-size: 33.33vmin;
     margin: 0.07em;
@@ -612,3 +612,4 @@ html.is-touch #wrapper {
     display: flex;
     height: 10px;
 }
+@import "{{ site.theme }}";
